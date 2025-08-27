@@ -198,6 +198,11 @@ async function setupBrowserService() {
     await execa('npm', ['install'], { stdio: 'inherit' });
     console.log(chalk.green('\nBrowser service dependencies installed successfully'));
     
+    // install playwright browsers with npx playwright install
+    console.log(chalk.blue("\nInstalling playwright browsers..."));
+    await execa("npx", ["playwright", "install"], { stdio: "inherit" });
+    console.log(chalk.green("\nPlaywright browsers installed successfully"));
+    
     console.log(chalk.blue('\nStarting browser service...'));
     await execa('npm', ['start'], { stdio: 'inherit' });
     return true;
